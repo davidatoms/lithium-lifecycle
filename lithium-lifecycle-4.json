@@ -1,0 +1,114 @@
+{
+    "elements": [
+      {
+        "label": "Geological Surveys",
+        "type": "Initial Process",
+        "description": "Initial identification and mapping of lithium deposits",
+        "tags": ["initial_phase"],
+        "system_role": "input",
+        "metrics": {
+          "time_required": "6-12 months",
+          "cost_impact": "high"
+        }
+      },
+      {
+        "label": "Feasibility Studies",
+        "type": "Initial Process",
+        "description": "Economic and technical viability assessment",
+        "tags": ["initial_phase"],
+        "system_role": "analysis",
+        "metrics": {
+          "time_required": "3-6 months",
+          "cost_impact": "medium"
+        }
+      },
+      {
+        "label": "Environmental Assessment",
+        "type": "Initial Process",
+        "description": "Environmental impact evaluation",
+        "tags": ["initial_phase", "environmental"],
+        "system_role": "analysis",
+        "metrics": {
+          "time_required": "6-12 months",
+          "impact_level": "high"
+        }
+      },
+      {
+        "label": "Permitting & Rights",
+        "type": "Initial Process",
+        "description": "Legal permissions and mining rights acquisition",
+        "tags": ["initial_phase", "legal"],
+        "system_role": "gateway",
+        "metrics": {
+          "time_required": "12-24 months",
+          "cost_impact": "high"
+        }
+      },
+      {
+        "label": "Brine Extraction",
+        "type": "Extraction Process",
+        "description": "Lithium extraction from salt brines",
+        "tags": ["extraction", "brine"],
+        "system_role": "process",
+        "subprocesses": ["Underground Pumping", "Evaporation", "Precipitation"]
+      },
+      {
+        "label": "Hard Rock Mining",
+        "type": "Extraction Process",
+        "description": "Lithium extraction from mineral ores",
+        "tags": ["extraction", "mining"],
+        "system_role": "process",
+        "subprocesses": ["Mining", "Crushing", "Concentration"]
+      }
+    ],
+    "connections": [
+      {
+        "from": "Geological Surveys",
+        "to": "Feasibility Studies",
+        "type": "causes",
+        "strength": "strong",
+        "delay": "medium",
+        "description": "Survey data enables feasibility assessment"
+      },
+      {
+        "from": "Feasibility Studies",
+        "to": "Environmental Assessment",
+        "type": "causes",
+        "strength": "strong",
+        "delay": "short",
+        "description": "Feasibility determines environmental study scope"
+      },
+      {
+        "from": "Environmental Assessment",
+        "to": "Permitting & Rights",
+        "type": "influences",
+        "strength": "strong",
+        "delay": "medium",
+        "description": "Environmental impact affects permit approval"
+      },
+      {
+        "from": "Permitting & Rights",
+        "to": "Brine Extraction",
+        "type": "enables",
+        "strength": "strong",
+        "delay": "short",
+        "description": "Legal approval required for extraction"
+      },
+      {
+        "from": "Permitting & Rights",
+        "to": "Hard Rock Mining",
+        "type": "enables",
+        "strength": "strong",
+        "delay": "short",
+        "description": "Legal approval required for mining"
+      }
+    ],
+    "loops": [
+      {
+        "name": "Environmental Impact Loop",
+        "type": "balancing",
+        "elements": ["Environmental Assessment", "Permitting & Rights", "Brine Extraction"],
+        "description": "Environmental assessment influences extraction permits"
+      }
+    ]
+  }
