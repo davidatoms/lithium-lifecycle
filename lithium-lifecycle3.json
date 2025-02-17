@@ -1,155 +1,245 @@
 {
-  "elements": [
-    {
-      "label": "A",
-      "type": "Initial",
-      "description": "Geological Surveys",
-      "tags": ["survey", "initial_phase"]
-    },
-    {
-      "label": "B",
-      "type": "Initial",
-      "description": "Feasibility Studies",
-      "tags": ["study", "initial_phase"]
-    },
-    {
-      "label": "C",
-      "type": "Initial",
-      "description": "Environmental Assessment",
-      "tags": ["assessment", "initial_phase"]
-    },
-    {
-      "label": "D",
-      "type": "Initial",
-      "description": "Permitting & Rights",
-      "tags": ["legal", "initial_phase"]
-    },
-    {
-      "label": "E1",
-      "type": "Extraction",
-      "description": "Brine Process",
-      "tags": ["brine", "extraction"]
-    },
-    {
-      "label": "E1a",
-      "type": "Brine",
-      "description": "Underground Pumping",
-      "tags": ["pumping", "brine"]
-    },
-    {
-      "label": "E1b",
-      "type": "Brine",
-      "description": "Evaporation Ponds",
-      "tags": ["evaporation", "brine"]
-    },
-    {
-      "label": "E1c",
-      "type": "Brine",
-      "description": "Sequential Precipitation",
-      "tags": ["precipitation", "brine"]
-    },
-    {
-      "label": "E1d",
-      "type": "Brine",
-      "description": "Lithium Chloride Solution",
-      "tags": ["solution", "brine"]
-    },
-    {
-      "label": "E2",
-      "type": "Extraction",
-      "description": "Hard Rock Mining",
-      "tags": ["mining", "extraction"]
-    },
-    {
-      "label": "E2a",
-      "type": "Mining",
-      "description": "Mining & Crushing",
-      "tags": ["crushing", "mining"]
-    },
-    {
-      "label": "E2b",
-      "type": "Mining",
-      "description": "Concentration",
-      "tags": ["concentration", "mining"]
-    },
-    {
-      "label": "E2c",
-      "type": "Mining",
-      "description": "Roasting",
-      "tags": ["roasting", "mining"]
-    },
-    {
-      "label": "E2d",
-      "type": "Mining",
-      "description": "Leaching",
-      "tags": ["leaching", "mining"]
+    "lifecycle": {
+      "initial_phase": {
+        "name": "Initial Phase",
+        "steps": [
+          {
+            "id": "A",
+            "name": "Geological Surveys",
+            "next": "B"
+          },
+          {
+            "id": "B",
+            "name": "Feasibility Studies",
+            "next": "C"
+          },
+          {
+            "id": "C",
+            "name": "Environmental Assessment",
+            "next": "D"
+          },
+          {
+            "id": "D",
+            "name": "Permitting & Rights",
+            "next": ["E1", "E2"]
+          }
+        ],
+        "style": {
+          "fill": "#E6F3FF",
+          "stroke": "#4A90E2"
+        }
+      },
+      "extraction_methods": {
+        "brine_process": {
+          "id": "E1",
+          "name": "Brine Process",
+          "steps": [
+            {
+              "id": "E1a",
+              "name": "Underground Pumping"
+            },
+            {
+              "id": "E1b",
+              "name": "Evaporation Ponds"
+            },
+            {
+              "id": "E1c",
+              "name": "Sequential Precipitation"
+            },
+            {
+              "id": "E1d",
+              "name": "Lithium Chloride Solution",
+              "next": "F"
+            }
+          ],
+          "style": {
+            "fill": "#E8F5E9",
+            "stroke": "#2E7D32"
+          }
+        },
+        "hard_rock_mining": {
+          "id": "E2",
+          "name": "Hard Rock Mining",
+          "steps": [
+            {
+              "id": "E2a",
+              "name": "Mining & Crushing"
+            },
+            {
+              "id": "E2b",
+              "name": "Concentration"
+            },
+            {
+              "id": "E2c",
+              "name": "Roasting"
+            },
+            {
+              "id": "E2d",
+              "name": "Leaching",
+              "next": "F"
+            }
+          ],
+          "style": {
+            "fill": "#FFF3E0",
+            "stroke": "#F57C00"
+          }
+        }
+      },
+      "processing": {
+        "name": "Processing & Refining",
+        "steps": [
+          {
+            "id": "F",
+            "name": "Chemical Processing",
+            "processes": [
+              {
+                "id": "F1",
+                "name": "Add Soda Ash",
+                "produces": "G1"
+              },
+              {
+                "id": "F2",
+                "name": "Add Caustic Soda",
+                "produces": "G2"
+              }
+            ]
+          },
+          {
+            "id": "G1",
+            "name": "Lithium Carbonate",
+            "next": "H"
+          },
+          {
+            "id": "G2",
+            "name": "Lithium Hydroxide",
+            "next": "H"
+          },
+          {
+            "id": "H",
+            "name": "Quality Control",
+            "next": "I"
+          }
+        ],
+        "style": {
+          "fill": "#F3E5F5",
+          "stroke": "#7B1FA2"
+        }
+      },
+      "distribution": {
+        "name": "Market & Distribution",
+        "steps": [
+          {
+            "id": "I",
+            "name": "Global Distribution",
+            "channels": [
+              {
+                "id": "I1",
+                "name": "Strategic Reserves"
+              },
+              {
+                "id": "I2",
+                "name": "Direct Distribution"
+              }
+            ]
+          },
+          {
+            "id": "J",
+            "name": "Market Applications",
+            "categories": {
+              "battery_production": {
+                "id": "J1",
+                "applications": [
+                  {
+                    "id": "K1",
+                    "name": "EV Batteries"
+                  },
+                  {
+                    "id": "K2",
+                    "name": "Consumer Electronics"
+                  },
+                  {
+                    "id": "K3",
+                    "name": "Energy Storage"
+                  }
+                ]
+              },
+              "other_applications": {
+                "id": "J2",
+                "applications": [
+                  {
+                    "id": "K4",
+                    "name": "Glass/Ceramics"
+                  },
+                  {
+                    "id": "K5",
+                    "name": "Medical Use"
+                  },
+                  {
+                    "id": "K6",
+                    "name": "Lubricants"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "style": {
+          "fill": "#E1F5FE",
+          "stroke": "#0288D1"
+        }
+      },
+      "end_of_life": {
+        "name": "End of Life",
+        "decision": {
+          "id": "L",
+          "options": [
+            {
+              "choice": "Recycle",
+              "leads_to": "M"
+            },
+            {
+              "choice": "Dispose",
+              "leads_to": "N"
+            }
+          ]
+        },
+        "recycling": {
+          "id": "M",
+          "name": "Recycling Process",
+          "steps": [
+            {
+              "id": "M1",
+              "name": "Collection"
+            },
+            {
+              "id": "M2",
+              "name": "Sorting"
+            },
+            {
+              "id": "M3",
+              "name": "Processing"
+            },
+            {
+              "id": "M4",
+              "name": "Material Recovery",
+              "next": "F"
+            }
+          ]
+        },
+        "styles": {
+          "decision": {
+            "fill": "#FFB366",
+            "stroke": "#E65100"
+          },
+          "recycling": {
+            "fill": "#90EE90",
+            "stroke": "#2E7D32"
+          },
+          "disposal": {
+            "fill": "#FF9999",
+            "stroke": "#C62828"
+          }
+        }
+      }
     }
-  ],
-  "connections": [
-    {
-      "from": "A",
-      "to": "B",
-      "type": "follows"
-    },
-    {
-      "from": "B",
-      "to": "C",
-      "type": "follows"
-    },
-    {
-      "from": "C",
-      "to": "D",
-      "type": "follows"
-    },
-    {
-      "from": "D",
-      "to": "E1",
-      "type": "leads_to"
-    },
-    {
-      "from": "D",
-      "to": "E2",
-      "type": "leads_to"
-    },
-    {
-      "from": "E1",
-      "to": "E1a",
-      "type": "process_step"
-    },
-    {
-      "from": "E1a",
-      "to": "E1b",
-      "type": "process_step"
-    },
-    {
-      "from": "E1b",
-      "to": "E1c",
-      "type": "process_step"
-    },
-    {
-      "from": "E1c",
-      "to": "E1d",
-      "type": "process_step"
-    },
-    {
-      "from": "E2",
-      "to": "E2a",
-      "type": "process_step"
-    },
-    {
-      "from": "E2a",
-      "to": "E2b",
-      "type": "process_step"
-    },
-    {
-      "from": "E2b",
-      "to": "E2c",
-      "type": "process_step"
-    },
-    {
-      "from": "E2c",
-      "to": "E2d",
-      "type": "process_step"
-    }
-  ]
-}
+  }
