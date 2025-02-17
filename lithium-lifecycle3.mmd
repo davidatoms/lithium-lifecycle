@@ -1,0 +1,123 @@
+flowchart TD
+    subgraph Initial ["Initial Phase"]
+        A[Geological Surveys] --> B[Feasibility Studies]
+        B --> C[Environmental Assessment]
+        C --> D[Permitting & Rights]
+    end
+
+    subgraph Extraction ["Extraction Methods"]
+        direction LR
+        E1[Brine Process] --> E1a[Underground Pumping]
+        E1a --> E1b[Evaporation Ponds]
+        E1b --> E1c[Sequential Precipitation]
+        E1c --> E1d[Lithium Chloride Solution]
+
+        E2[Hard Rock Mining] --> E2a[Mining & Crushing]
+        E2a --> E2b[Concentration]
+        E2b --> E2c[Roasting]
+        E2c --> E2d[Leaching]
+    end
+
+    subgraph Processing ["Processing & Refining"]
+        F[Chemical Processing] --> F1[Add Soda Ash]
+        F --> F2[Add Caustic Soda]
+        F1 --> G1[Lithium Carbonate]
+        F2 --> G2[Lithium Hydroxide]
+        G1 --> H[Quality Control]
+        G2 --> H
+    end
+
+    subgraph Distribution ["Market & Distribution"]
+        I[Global Distribution] --> I1[Strategic Reserves]
+        I --> I2[Direct Distribution]
+        
+        I1 --> J[Market Applications]
+        I2 --> J
+        
+        J --> J1[Battery Production]
+        J --> J2[Other Applications]
+        
+        J1 --> K1[EV Batteries]
+        J1 --> K2[Consumer Electronics]
+        J1 --> K3[Energy Storage]
+        
+        J2 --> K4[Glass/Ceramics]
+        J2 --> K5[Medical Use]
+        J2 --> K6[Lubricants]
+    end
+
+    subgraph EOL ["End of Life"]
+        L{End of Life Decision}
+        
+        L -->|Recycle| M[Recycling Process]
+        L -->|Dispose| N[Disposal]
+        
+        M --> M1[Collection]
+        M1 --> M2[Sorting]
+        M2 --> M3[Processing]
+        M3 --> M4[Material Recovery]
+    end
+
+    D --> E1
+    D --> E2
+    E1d --> F
+    E2d --> F
+    H --> I
+    K1 --> L
+    K2 --> L
+    K3 --> L
+    K4 --> L
+    K5 --> L
+    K6 --> L
+    M4 --> F
+
+    %% Initial Phase Styling
+    style A fill:#E6F3FF,stroke:#4A90E2
+    style B fill:#E6F3FF,stroke:#4A90E2
+    style C fill:#E6F3FF,stroke:#4A90E2
+    style D fill:#E6F3FF,stroke:#4A90E2
+
+    %% Brine Process Styling
+    style E1 fill:#E8F5E9,stroke:#2E7D32
+    style E1a fill:#E8F5E9,stroke:#2E7D32
+    style E1b fill:#E8F5E9,stroke:#2E7D32
+    style E1c fill:#E8F5E9,stroke:#2E7D32
+    style E1d fill:#E8F5E9,stroke:#2E7D32
+
+    %% Hard Rock Mining Styling
+    style E2 fill:#FFF3E0,stroke:#F57C00
+    style E2a fill:#FFF3E0,stroke:#F57C00
+    style E2b fill:#FFF3E0,stroke:#F57C00
+    style E2c fill:#FFF3E0,stroke:#F57C00
+    style E2d fill:#FFF3E0,stroke:#F57C00
+
+    %% Processing Styling
+    style F fill:#F3E5F5,stroke:#7B1FA2
+    style F1 fill:#F3E5F5,stroke:#7B1FA2
+    style F2 fill:#F3E5F5,stroke:#7B1FA2
+    style G1 fill:#F3E5F5,stroke:#7B1FA2
+    style G2 fill:#F3E5F5,stroke:#7B1FA2
+    style H fill:#F3E5F5,stroke:#7B1FA2
+
+    %% Distribution Styling
+    style I fill:#E1F5FE,stroke:#0288D1
+    style I1 fill:#E1F5FE,stroke:#0288D1
+    style I2 fill:#E1F5FE,stroke:#0288D1
+    style J fill:#E1F5FE,stroke:#0288D1
+    style J1 fill:#E1F5FE,stroke:#0288D1
+    style J2 fill:#E1F5FE,stroke:#0288D1
+    style K1 fill:#E1F5FE,stroke:#0288D1
+    style K2 fill:#E1F5FE,stroke:#0288D1
+    style K3 fill:#E1F5FE,stroke:#0288D1
+    style K4 fill:#E1F5FE,stroke:#0288D1
+    style K5 fill:#E1F5FE,stroke:#0288D1
+    style K6 fill:#E1F5FE,stroke:#0288D1
+
+    %% End of Life Styling
+    style L fill:#FFB366,stroke:#E65100
+    style M fill:#90EE90,stroke:#2E7D32
+    style M1 fill:#90EE90,stroke:#2E7D32
+    style M2 fill:#90EE90,stroke:#2E7D32
+    style M3 fill:#90EE90,stroke:#2E7D32
+    style M4 fill:#87CEEB,stroke:#0288D1
+    style N fill:#FF9999,stroke:#C62828

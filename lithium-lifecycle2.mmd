@@ -1,0 +1,180 @@
+flowchart TD
+    %% Initial Discovery Phase
+    Start[Initial Discovery] --> A1[Geological Surveys]
+    A1 --> A2[Feasibility Studies]
+    A2 --> A3[Environmental Impact Assessment]
+    A3 --> A4[Permitting & Rights]
+    A4 --> A[Lithium Identification]
+
+    %% Extraction Phase with detailed processes
+    A --> B[Extraction]
+    
+    %% Brine Process Detail
+    B --> |Brine Process|B1[1. Pump from underground]
+    B1 --> BP1[Salt-Rich Brine Extraction]
+    BP1 --> BP2[Pre-concentration]
+    BP2 --> B3[2. Evaporation Ponds]
+    B3 --> BP3[Solar Evaporation 18-24 months]
+    BP3 --> BP4[Sodium/Potassium Removal]
+    BP4 --> B4[3. Sequential Precipitation]
+    B4 --> BP5[Magnesium Removal]
+    BP5 --> BP6[Boron Removal]
+    BP6 --> B5[4. Lithium Chloride Solution]
+    
+    %% Hard Rock Mining Detail
+    B --> |Hard Rock Mining|B2[1. Mining & Crushing]
+    B2 --> HM1[Spodumene Ore Extraction]
+    HM1 --> HM2[Drilling & Blasting]
+    HM2 --> HM3[Crushing & Screening]
+    HM3 --> B6[2. Concentration]
+    B6 --> HM4[Dense Media Separation]
+    HM4 --> HM5[Flotation]
+    HM5 --> B7[3. Roasting]
+    B7 --> HM6[Calcination at 1050°C]
+    HM6 --> HM7[Alpha to Beta Conversion]
+    HM7 --> B8[4. Leaching]
+    B8 --> HM8[Acid Treatment]
+    HM8 --> HM9[Impurity Removal]
+    
+    %% Refining Process
+    B5 --> C[Refining]
+    B8 --> C
+    
+    C --> C1[Lithium Carbonate]
+    C --> C2[Lithium Hydroxide]
+    C --> C3[Lithium Chloride]
+    C --> C4[Lithium Metal]
+    
+    %% Quality Control
+    C1 --> QC[Quality Control]
+    C2 --> QC
+    C3 --> QC
+    C4 --> QC
+    
+    %% Distribution & Storage
+    QC --> D[Distribution]
+    D --> |Storage|D1[Strategic Reserves]
+    D --> |Transport|D2[Global Distribution]
+    
+    %% Market Entry
+    D1 --> E[Wholesale Markets]
+    D2 --> E
+    
+    %% Applications
+    E --> |Battery Production|E1[EV Batteries]
+    E --> |Battery Production|E2[Consumer Electronics]
+    E --> |Other Applications|E3[Glass/Ceramics]
+    E --> |Other Applications|E4[Lubricants]
+    E --> |Other Applications|E5[Medical Use]
+    E --> |Other Applications|E6[Aerospace]
+    E --> |Other Applications|E7[Energy Storage]
+    
+    %% Market Distribution
+    E1 --> F[Retail Markets]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+    E5 --> F
+    E6 --> F
+    E7 --> F
+    
+    %% Usage Phase
+    F --> G[End Users]
+    G --> H[Usage Phase]
+    
+    %% End of Life
+    H --> I{End of Life}
+    I --> |Yes|J[Recycling]
+    I --> |No|K[Disposal]
+    
+    %% Expanded Recycling Process
+    J --> L[Recycling Process]
+    
+    %% Collection & Sorting
+    L --> L1[1. Collection]
+    L1 --> L1a[Battery Collection Points]
+    L1a --> L1b[Transportation]
+    L1b --> L1c[Storage & Inventory]
+    
+    L1c --> L2[2. Sorting & Dismantling]
+    L2 --> L2a[Battery Type Classification]
+    L2a --> L2b[Discharge & Safety Check]
+    L2b --> L2c[Manual Dismantling]
+    L2c --> L2d[Casing Removal]
+    L2d --> L2e[Component Separation]
+    
+    %% Processing Methods
+    L2e --> L3[3. Processing]
+    L3 --> |Method 1|L3a[Pyrometallurgical]
+    L3 --> |Method 2|L3b[Hydrometallurgical]
+    L3 --> |Method 3|L3c[Direct Recycling]
+    
+    %% Pyrometallurgical
+    L3a --> L3a1[High-Temp Smelting]
+    L3a1 --> L3a2[Slag Formation]
+    L3a2 --> L3a3[Metal Recovery]
+    
+    %% Hydrometallurgical
+    L3b --> L3b1[Leaching]
+    L3b1 --> L3b2[Solvent Extraction]
+    L3b2 --> L3b3[Precipitation]
+    
+    %% Direct Recycling
+    L3c --> L3c1[Physical Separation]
+    L3c1 --> L3c2[Chemical Treatment]
+    L3c2 --> L3c3[Cathode Regeneration]
+    
+    %% Material Recovery & Quality
+    L3a3 --> L4[4. Material Recovery]
+    L3b3 --> L4
+    L3c3 --> L4
+    
+    L4 --> L4a[Lithium Compounds]
+    L4 --> L4b[Cobalt Recovery]
+    L4 --> L4c[Nickel Recovery]
+    L4 --> L4d[Copper Recovery]
+    L4 --> L4e[Aluminum Recovery]
+    
+    %% Quality Control & Processing
+    L4a --> L5[5. Quality Control]
+    L4b --> L5
+    L4c --> L5
+    L4d --> L5
+    L4e --> L5
+    
+    L5 --> L5a[Purity Testing]
+    L5a --> L5b[Composition Analysis]
+    L5b --> L5c[Performance Testing]
+    
+    %% Reintegration
+    L5c --> L6[6. Material Reintegration]
+    L6 --> L6a[Battery Grade Materials]
+    L6 --> L6b[Industrial Grade Materials]
+    L6 --> L6c[Other Applications]
+    
+    %% Return to Market
+    L6a --> M[Return to Market]
+    L6b --> M
+    L6c --> M
+    M --> D
+    
+    %% Environmental Monitoring
+    subgraph Environmental Impact
+    EM1[Water Usage Monitoring]
+    EM2[Carbon Footprint Tracking]
+    EM3[Land Impact Assessment]
+    end
+    
+    %% Market Analysis
+    subgraph Market Factors
+    MF1[Price Fluctuations]
+    MF2[Supply/Demand Balance]
+    MF3[Geopolitical Factors]
+    end
+    
+    style I fill:#FFB366
+    style J fill:#90EE90
+    style K fill:#FF9999
+    style M fill:#87CEEB
+    style Start fill:#98FB98
+    style QC fill:#DDA0DD

@@ -1,0 +1,8 @@
+{
+  "name": "lithium-research-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^10.8.0",
+    "mermaid": "^10.8.0"
+  }
+} 

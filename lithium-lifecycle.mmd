@@ -1,0 +1,56 @@
+flowchart TD
+    A[Lithium Identification] --> B[Extraction]
+    B --> |Brine Process|B1[1. Pump from underground]
+    B --> |Hard Rock Mining|B2[1. Mining & Crushing]
+    
+    B1 --> B3[2. Evaporation Ponds]
+    B3 --> B4[3. Sequential Precipitation]
+    B4 --> B5[4. Lithium Chloride Solution]
+    
+    B2 --> B6[2. Concentration]
+    B6 --> B7[3. Roasting]
+    B7 --> B8[4. Leaching]
+    
+    B5 --> C[Refining]
+    B8 --> C
+    
+    C --> C1[Lithium Carbonate]
+    C --> C2[Lithium Hydroxide]
+    
+    C1 --> D[Distribution]
+    C2 --> D
+    
+    D --> E[Wholesale Markets]
+    E --> |Battery Production|E1[EV Batteries]
+    E --> |Battery Production|E2[Consumer Electronics]
+    E --> |Other Applications|E3[Glass/Ceramics]
+    E --> |Other Applications|E4[Lubricants]
+    E --> |Other Applications|E5[Medical Use]
+    
+    E1 --> F[Retail Markets]
+    E2 --> F
+    E3 --> F
+    E4 --> F
+    E5 --> F
+    
+    F --> G[End Users]
+    
+    G --> H[Usage Phase]
+    
+    H --> I{End of Life}
+    I --> |Yes|J[Recycling]
+    I --> |No|K[Disposal]
+    
+    J --> L[Recycling Process]
+    L --> L1[1. Collection]
+    L1 --> L2[2. Sorting]
+    L2 --> L3[3. Processing]
+    L3 --> L4[4. Material Recovery]
+    
+    L4 --> M[Return to Market]
+    M --> D
+    
+    style I fill:#FFB366
+    style J fill:#90EE90
+    style K fill:#FF9999
+    style M fill:#87CEEB
